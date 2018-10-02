@@ -76,8 +76,8 @@ cwd = os.getcwd()
 # uPavia = sio.loadmat(os.path.join(cwd, './datasets/UP/PaviaU.mat'))
 # gt_uPavia = sio.loadmat(os.path.join(cwd, './datasets/UP/PaviaU_gt.mat'))
 
-uPavia = sio.loadmat('/home/zilong/SSRN/datasets/UP/PaviaU.mat')
-gt_uPavia = sio.loadmat('/home/zilong/SSRN/datasets/UP/PaviaU_gt.mat')
+uPavia = sio.loadmat('/SSRN/datasets/UP/PaviaU.mat')
+gt_uPavia = sio.loadmat('/SSRN/datasets/UP/PaviaU_gt.mat')
 data_IN = uPavia['paviaU']
 gt_IN = gt_uPavia['paviaU_gt']
 print (data_IN.shape)
@@ -139,7 +139,7 @@ seeds = [1334]
 for index_iter in xrange(ITER):
     print("# %d Iteration" % (index_iter + 1))
 
-    best_weights_RES_path_ss4 = '/home/zilong/SSRN/models/UP_best_RES_3D_SS4_5_' + str(index_iter + 1) + '.hdf5'
+    best_weights_RES_path_ss4 = '/SSRN/models/UP_best_RES_3D_SS4_5_' + str(index_iter + 1) + '.hdf5'
 
     np.random.seed(seeds[index_iter])
     #    train_indices, test_indices = sampleFixNum.samplingFixedNum(TRAIN_NUM, gt)
@@ -203,8 +203,5 @@ for index_iter in xrange(ITER):
     print("# %d Iteration" % (index_iter + 1))
 
 modelStatsRecord.outputStats_assess(KAPPA_RES_SS4, OA_RES_SS4, AA_RES_SS4, ELEMENT_ACC_RES_SS4, CATEGORY,
-                             '/home/zilong/SSRN/records/UP_test_SS_10.txt',
-                             '/home/zilong/SSRN/records/UP_test_SS_element_10.txt')
-
-
-
+                             '/SSRN/records/UP_test_SS_10.txt',
+                             '/SSRN/records/UP_test_SS_element_10.txt')
